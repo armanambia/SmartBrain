@@ -92,7 +92,7 @@ class App extends Component {
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
     if(this.state.input.length){
-      fetch('http://localhost:3000/imageurl', {
+      fetch('https://floating-springs-20660.herokuapp.com/imageurl', {
               method: 'post',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -103,7 +103,7 @@ class App extends Component {
         .then(response => {
           console.log('hi', response)
           if (response) {
-            fetch('http://localhost:3000/image', {
+            fetch('https://floating-springs-20660.herokuapp.com/image', {
               method: 'put',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
